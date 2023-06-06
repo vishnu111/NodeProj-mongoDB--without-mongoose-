@@ -1,0 +1,12 @@
+Here, in this Node.js project. We are using "express", "ejs" template engine, "body-parser", "mongoDb" and "nodemon" as dev dependency.
+We have different book titles here. Each title has title, price, desc, img url, id and user Id that book belongs too. 
+
+In the first step which starts in "app.js", we will import required packages and import all the routes. We include all the routes here in the app.js with app.use(routeName) and other needful snippets like "body-parser" and giving access to static css or JS files using express.static and starting the connection by passing it as argument to a function of mongoDb which we start the db connection first and then listen for node.js. 
+
+The Routes which were imported in the app.js will have to import controllers. Here, we define the path names to the routes. And which controller middleware should execute for a particular path are defined here. There are two types of routes "post" and "get". Use use express.Router to export all the routes. 
+
+The "Controllers" which were imported in the "routes" will have all the middleware function for the routes with arguments such as "(res, res, next)". In those function we will call the "Product/User Models" to fetch the data and pass that data to the template engines like "ejs". 
+
+The "Models" which were imported in the "controllers" are user to manage the data of user/product by communicating with the mongoDb using static methods. Here, these models are class based ones which have constructors as well. 
+
+The "util" which was imported in the "models" has information about the mongoDb which returns the database on calling a function of it's and other utilities. 
